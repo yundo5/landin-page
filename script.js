@@ -30,4 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.background = 'rgba(15, 23, 42, 0.8)';
         }
     });
+
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinksList = document.querySelector('.nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinksList.classList.toggle('active');
+            hamburger.classList.toggle('toggle');
+        });
+    }
+
+    // Close menu when link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinksList.classList.remove('active');
+        });
+    });
 });
